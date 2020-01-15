@@ -5,20 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Samdos Techologies Limited</title>
-  <link rel="stylesheet" href="./stylesheets/css/style.css">
+  <link rel="stylesheet" href="/stylesheets/css/style.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link href="stylesheets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="stylesheets/css/mdb.min.css" rel="stylesheet">
+  <link href="/stylesheets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/stylesheets/css/mdb.min.css" rel="stylesheet">
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
-        <link rel="stylesheet" href="stylesheets/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="stylesheets/css/animate.css">
-        <link rel="stylesheet" href="stylesheets/css/media-queries.css">
+        <link rel="stylesheet" href="/stylesheets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/stylesheets/css/animate.css">
+        <link rel="stylesheet" href="/stylesheets/css/media-queries.css">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" type="text/css" href="stylesheets/css/switcher.css" media="screen" />
-        <link rel="stylesheet" href="stylesheets/css/fractionslider.css"/>
-        <link rel="stylesheet" href="stylesheets/css/style-fraction.css"/>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/css/switcher.css" media="screen" />
+
 </head>
 <body>
  <header>
@@ -30,16 +29,34 @@
    <section>
       <div style="height:100px;"></div>
         <div class="row mx-0">
-          <div class="col-md-3 mx-auto">
+          <div class="col-md-10 mx-auto">
             <div>
-              <form class="text-center border border-light p-5" action="" method="POST">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">S/N</th>
+                        <th scope="col">Book Titles</th>
+                        <th scope="col">Book Authors</th>
+                        <th scope="col">Book Subjects</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% if (docs.length) { %>
+                            <% for (let c = 0; c < docs.length; c++) { %>
+                                  <tr>
+                                    <th scope="row"><%= c+1 %></th>
+                                    <td><%= docs[c].bookTitle %> </td>
+                                    <td><%= docs[c].bookAuthor %> </td>
+                                    <td><%= docs[c].bookSubject %> </td>
+                                  </tr>
+                            <% } %>
+                        <% } %>
 
-                <p class="h4 mb-4">Find Content</p>
-                <input type="text" id="defaultLoginFormEmail" name="defaultLoginFormEmail" class="form-control mb-4" placeholder="Enter Text">
+                    </tbody>
+                  </table>
+            </div>
 
-                <button class="btn btn-green btn-block my-4" type="submit">Search</button>
-              </form>
-                    </div>
+
           </div>
         </div>
    </section>
